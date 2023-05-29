@@ -1,0 +1,14 @@
+server:
+  port: 8380
+spring:
+  application:
+    name: Data-Input-Service
+
+  config:
+    import: configserver:http://localhost:8888
+
+kafka:
+  topics:
+    dis-output-topic: $$output$$
+scheduled:
+  fixed-rate-milliseconds: $$interval$$
